@@ -6,6 +6,19 @@
   <title>アイデア屋</title>
   <link rel="stylesheet" href="index.css">
 </head>
+<script>
+  const fadeUps = document.querySelectorAll('.fade-up');
+
+  window.addEventListener('scroll', () => {
+    fadeUps.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (rect.top < windowHeight - 100) {
+        el.classList.add('show');
+      }
+    });
+  });
+</script>
 <body>
 
   <!-- ヘッダー -->
@@ -27,7 +40,7 @@
   </section>
 
   <!-- イベント概要 -->
-  <section id="about" class="section">
+  <section id="about" class="section fade-up">
     <div class="container">
       <h3 class="section-title">イベント概要</h3>
       <p>
@@ -43,7 +56,7 @@
 
 
   <!-- 参加申込 -->
-  <section id="contact" class="section contact">
+  <section id="contact" class="section contact fade-up">
     <h3>参加登録はこちら</h3>
     <p>フォームに必要事項を入力して送信してください。</p>
     <a href="https://forms.gle/FZyGZGYP8yBi6bHP8" target="_blank" class="btn white">Googleフォームで登録</a>
